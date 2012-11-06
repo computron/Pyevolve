@@ -29,7 +29,7 @@ def LinearScaling(pop):
    if pop_rawAve == pop_rawMax:
       a = 1.0
       b = 0.0
-   elif pop_rawMin > (c * pop_rawAve - pop_rawMax / c - 1.0):
+   elif pop_rawMin > (c * pop_rawAve - pop_rawMax / (c - 1.0)):
       delta = pop_rawMax - pop_rawAve
       a = (c - 1.0) * pop_rawAve / delta
       b = pop_rawAve * (pop_rawMax - (c * pop_rawAve)) / delta
