@@ -131,7 +131,7 @@ def G1DListCrossoverSinglePoint(genome, **args):
 def G1DListCrossoverTwoPoint(genome, **args):
    """ The G1DList crossover, Two Point
 
-   .. warning:: You can't use this crossover method for lists with just one element.
+   .. warning:: You can't use this crossover method for lists with just one or two elements.
 
    """
    sister = None
@@ -139,10 +139,13 @@ def G1DListCrossoverTwoPoint(genome, **args):
    gMom = args["mom"]
    gDad = args["dad"]
    
-   if len(gMom) == 1:
-      Util.raiseException("The 1D List have one element, can't use the Two Point Crossover method !", TypeError)
+   if len(gMom) < 3:
+      Util.raiseException("The 1D List has less than 3 elements, can't use the Two Point Crossover method !", TypeError)
 
-   cuts = [rand_randint(1, len(gMom)-1), rand_randint(1, len(gMom)-1)]
+   cuts = [0, 0]
+   # Keep generating random cuts until they are in different places
+   while cuts[0] == cuts[1]:
+       cuts = [rand_randint(1, len(gMom)-1), rand_randint(1, len(gMom)-1)]
 
    if cuts[0] > cuts[1]:
       Util.listSwapElement(cuts, 0, 1)
