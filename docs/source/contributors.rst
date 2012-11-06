@@ -31,3 +31,7 @@ Contributors
 **Blaine Booher**, `University of Cincinnati, Cincinnati, Ohio USA`_,
 
 .. image:: imgs/email_blaine.png
+
+**Anubhav Jain**, `Personal Site <http://www.anubhavjain.net>`_, Berkeley CA, USA.
+
+.. image:: imgs/email_anubhav.png
